@@ -1,0 +1,142 @@
+body{
+    width: 98vw;
+    height: 97.8vh;
+    background-color: white;
+    background: linear-gradient(to bottom right, rgba(94, 244, 254, 0.8), rgba(96, 180, 248, 0.2));
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+.container{
+    width: 340px;
+    height: 490px;
+    align-self: center;
+    margin: auto;
+    box-shadow: 10px 5px 20px rgba(68, 68, 68, 0.4);
+    background-color: white;
+    overflow-y: hidden;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 94.1%;
+    background-color: skyblue;
+    padding:0;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 10px;
+}
+
+.header p{
+    font-size: 15pt;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.addIconContainer{
+    height: 33%;
+}
+
+.addIcon{
+    height: 100%;
+}
+
+.body{
+    width: 100%;
+    display: grid;
+    flex-direction: column;
+    gap: 0px;
+    color: #555555;
+}
+
+.elements{
+    max-height: 40px;
+    min-height: 40px;
+    width: 100%;
+    background-color: white;
+    right: 10px;
+    overflow: hidden;
+}
+
+.elements:nth-of-type(odd){
+    background-color: whitesmoke;
+}
+
+.elementsOut{
+    animation: deleteElement;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+.removeContainer{
+    display: inline-block;
+    height: 100%;
+    width: 0%;
+    /* width: 15%; */
+    background-color: tomato;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+}
+
+.trash{
+    height: 40%;
+    margin-top: 10px;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.elements:hover .removeContainer{
+    width: 15%;
+}
+
+.elements:hover .trash{
+    opacity: 1;
+}
+
+.textContainer{
+    display: inline-block;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    height: 100%;
+}
+
+.elements p, input{
+    font-size: 10pt;
+    padding: 0;
+    margin: 8px 0 0 2px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+input{
+    background-color: transparent;
+    border: transparent;
+    outline: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: #555555;
+}
+
+@keyframes trasherComesOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes deleteElement {
+    100%{
+        width: 0%;
+    }
+}
+
